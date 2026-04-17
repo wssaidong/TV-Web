@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <!-- WebView 区域 -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 加载进度 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:background="@drawable/bg_card"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="400dp"
+            android:layout_height="8dp"
+            android:indeterminate="false"
+            android:max="100"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="加载中 50%" />
+    </LinearLayout>
+
+    <!-- 顶部工具栏 -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="@drawable/bg_topbar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- 主页按钮 -->
+        <ImageButton
+            android:id="@+id/btnHome"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/bg_btn_tv"
+            android:contentDescription="主页"
+            android:padding="12dp"
+            android:src="@drawable/ic_home"
+            android:tint="@color/white" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="12dp"
+            android:background="@color/divider" />
+
+        <!-- 后退按钮 -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_btn_tv"
+            android:contentDescription="后退"
+            android:padding="12dp"
+            android:src="@drawable/ic_back"
+            android:tint="@color/white" />
+
+        <!-- 前进按钮 -->
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:alpha="0.3"
+            android:background="@drawable/bg_btn_tv"
+            android:contentDescription="前进"
+            android:padding="12dp"
+            android:src="@drawable/ic_forward"
+            android:tint="@color/white" />
+
+        <!-- 刷新按钮 -->
+        <ImageButton
+            android:id="@+id/btnRefresh"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:background="@drawable/bg_btn_tv"
+            android:contentDescription="刷新"
+            android:padding="12dp"
+            android:src="@drawable/ic_refresh"
+            android:tint="@color/white" />
+
+        <!-- URL 输入框 -->
+        <EditText
+            android:id="@+id/urlInput"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_url_input"
+            android:drawableStart="@drawable/ic_search"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:hint="输入网址或搜索..."
+            android:imeOptions="actionGo"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:paddingHorizontal="20dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textColorHint="@color/muted"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

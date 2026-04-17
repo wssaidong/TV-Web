@@ -1,0 +1,36 @@
+R_DEF: Internal format may change without notice
+local
+color accent
+color bg
+color black
+color border
+color card
+color card2
+color divider
+color green
+color input_bg
+color muted
+color white
+drawable bg_btn_tv
+drawable bg_card
+drawable bg_topbar
+drawable bg_url_input
+drawable ic_back
+drawable ic_forward
+drawable ic_home
+drawable ic_launcher_foreground
+drawable ic_refresh
+drawable ic_search
+id btnBack
+id btnForward
+id btnHome
+id btnRefresh
+id loadingText
+id progressBar
+id topBar
+id urlInput
+id webView
+layout activity_main
+mipmap ic_launcher
+string app_name
+style Theme.TVWeb

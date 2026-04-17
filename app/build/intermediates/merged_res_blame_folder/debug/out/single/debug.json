@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.tv.web.app-merged_res-34:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.tv.web.app-main-36:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_bg_url_input.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/bg_url_input.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_bg_card.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/bg_card.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_forward.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_forward.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_bg_btn_tv.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/bg_btn_tv.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_back.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_back.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_home.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_home.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_search.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_refresh.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_refresh.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/layout_activity_main.xml.flat",
+        "source": "com.tv.web.app-main-36:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.tv.web.app-merged_res-34:/drawable_bg_topbar.xml.flat",
+        "source": "com.tv.web.app-main-36:/drawable/bg_topbar.xml"
+    }
+]

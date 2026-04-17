@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FF3B82F6</color>
+    <color name="bg">#FF0A0E1A</color>
+    <color name="black">#FF000000</color>
+    <color name="border">#FF1E2D45</color>
+    <color name="card">#FF111827</color>
+    <color name="card2">#FF1A2235</color>
+    <color name="divider">#33FFFFFF</color>
+    <color name="green">#FF10B981</color>
+    <color name="input_bg">#FF1E293B</color>
+    <color name="muted">#FF64748B</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">TV Web</string>
+    <style name="Theme.TVWeb" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">@color/accent</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/accent</item>
+    </style>
+</resources>
