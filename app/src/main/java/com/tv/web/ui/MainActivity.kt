@@ -2,7 +2,6 @@ package com.tv.web.ui
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
 import android.view.KeyEvent
@@ -10,16 +9,15 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.webkit.WebChromeClient
-import android.webkit.WebResourceError
 import android.webkit.WebResourceRequest
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import android.widget.EditText
-import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.tv.web.R
@@ -78,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             setSupportZoom(true)
             loadWithOverviewMode = true
             useWideViewPort = true
-            mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
+            mixedContentMode = WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE
             mediaPlaybackRequiresUserGesture = false
         }
 
@@ -94,7 +92,8 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                view?.loadUrl(request?.url.toString())
+                val url = request?.url ?: return true
+                view?.loadUrl(url.toString())
                 return true
             }
         }
@@ -156,6 +155,16 @@ class MainActivity : AppCompatActivity() {
 
         // 按返回键如果 WebView 能返回就返回，否则退出
         webView.requestFocus()
+
+        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                when {
+                    isInputMode -> hideInput()
+                    webView.canGoBack() -> webView.goBack()
+                    else -> isEnabled = false
+                }
+            }
+        })
     }
 
     private fun loadUrl(url: String) {
@@ -189,21 +198,8 @@ class MainActivity : AppCompatActivity() {
         forwardBtn.alpha = if (webView.canGoForward()) 1f else 0.3f
     }
 
-    override fun onBackPressed() {
-        when {
-            isInputMode -> {
-                hideInput()
-            }
-            webView.canGoBack() -> {
-                webView.goBack()
-            }
-            else -> {
-                super.onBackPressed()
-            }
-        }
-    }
-
     override fun onDestroy() {
+        (webView.parent as? ViewGroup)?.removeView(webView)
         webView.destroy()
         super.onDestroy()
     }
